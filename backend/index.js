@@ -14,18 +14,12 @@ const crypto = require("crypto");
 app.use(express.json());
 app.options("*", cors());
 
-// const allowedOrigins = ["http://localhost:5173", "http://localhost:5174"];
-// app.use(
-//   cors({
-//     origin: function (origin, callback) {
-//       if (!origin || allowedOrigins.includes(origin)) {
-//         callback(null, true);
-//       } else {
-//         callback(new Error("Not allowed by CORS"));
-//       }
-//     },
-//   })
-// );
+app.use(
+  cors({
+    origin: "https://mern-e-commerce-admin-6jeo.onrender.com",
+    origin: "https://mern-e-commerce-frontend-044s.onrender.com",
+  })
+);
 
 // Ensure upload/images directory exists
 const dir = "./upload/images";
