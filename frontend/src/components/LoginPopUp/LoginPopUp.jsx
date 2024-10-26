@@ -57,7 +57,7 @@ const LoginPopUp = ({ setShowLogin }) => {
     }
 
     try {
-      const response = await fetch("http://localhost:4000/login", {
+      const response = await fetch("https://mern-e-commerce-backend-jkse.onrender.com/login", {
         method: "POST",
         headers: {
           Accept: "application/form-data",
@@ -97,7 +97,7 @@ const LoginPopUp = ({ setShowLogin }) => {
     }
 
     try {
-      const response = await fetch("http://localhost:4000/signup", {
+      const response = await fetch("https://mern-e-commerce-backend-jkse.onrender.com/signup", {
         method: "POST",
         headers: {
           Accept: "application/json",
