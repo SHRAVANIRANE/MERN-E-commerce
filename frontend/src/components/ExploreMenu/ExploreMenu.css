@@ -1,0 +1,109 @@
+.explore-menu .collab {
+  text-align: center;
+  margin: 40px;
+}
+.explore-menu .collab {
+  font-size: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.explore-menu .collab h1 {
+  font-family: mv boli;
+  margin: 4%;
+}
+.explore-menu .collab span {
+  position: relative;
+  font-family: mv boli;
+  margin-left: 10px;
+  color: orange;
+}
+h1 span::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: orange;
+  display: block;
+  position: relative;
+}
+
+.explore-menu {
+  display: flex;
+  flex-direction: column;
+}
+.explore-menu-list {
+  cursor: grab;
+  display: flex;
+  margin: 40px 0;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow-x: scroll;
+}
+.explore-menu-list img {
+  width: 200px;
+  height: 200px;
+}
+.explore-menu-list::-webkit-scrollbar {
+  display: none;
+}
+.explore-menu-list-item p {
+  text-align: center;
+  font-size: max(1.4vw, 16px);
+  font-weight: 600;
+  margin-top: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.explore-menu-list-item img {
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.explore-menu hr {
+  margin: 10px 0px;
+  height: 2px;
+  background-color: #e2e2e2;
+  border: none;
+}
+.explore-menu-list-item .active {
+  border: 4px solid orange;
+  padding: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .explore-menu-list-item img {
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px;
+  }
+  .explore-menu .collab {
+    font-size: 28px;
+  }
+
+  .explore-menu-list-item img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .explore-menu-list-item p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .explore-menu .collab {
+    font-size: 24px;
+  }
+
+  .explore-menu-list-item img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .explore-menu-list-item p {
+    font-size: 12px;
+  }
+}

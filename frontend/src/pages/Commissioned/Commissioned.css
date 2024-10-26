@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+/* CSS Variables for Theming */
+:root {
+  --carousel-bg-color: #f9f9f9;
+  --heading-color: #333;
+  --caption-bg-color: rgba(0, 0, 0, 0.6);
+  --caption-text-color: #fff;
+  --nav-button-bg: rgba(0, 0, 0, 0.5);
+  --nav-button-hover-bg: rgba(0, 0, 0, 0.8);
+  --pagination-bullet-color: #333;
+  --pagination-bullet-active-color: #fff;
+}
+
+/* Container Styling */
+.artwork-carousel-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: var(--carousel-bg-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styling */
+.carousel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 30px;
+  font-family: mv boli;
+  font-size: 2.5rem;
+}
+
+.carousel-heading span {
+  font-family: mv boli;
+  color: orange;
+  margin-left: 10px;
+  position: relative;
+}
+
+.carousel-heading span::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: orange;
+  display: block;
+  position: relative;
+}
+
+/* Swiper Container */
+.artwork-swiper {
+  width: 100%;
+  height: 400px;
+}
+
+.artwork-swiper .swiper-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slide-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.swiper-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.swiper-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: var(--caption-bg-color);
+  color: var(--caption-text-color);
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 1em;
+  font-family: "Poppins", sans-serif;
+}
+
+.swiper-slide:hover .swiper-image {
+  transform: scale(1.05);
+}
+
+/* Custom Navigation Buttons */
+.custom-swiper-button-prev,
+.custom-swiper-button-next {
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  background-color: var(--nav-button-bg);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-swiper-button-prev:hover,
+.custom-swiper-button-next:hover {
+  background-color: var(--nav-button-hover-bg);
+  transform: scale(1.1);
+}
+
+.custom-swiper-button-prev {
+  left: 10px;
+}
+
+.custom-swiper-button-next {
+  right: 10px;
+}
+
+/* Pagination Dots */
+.swiper-pagination-bullet {
+  background: var(--pagination-bullet-color);
+  opacity: 1;
+  transition: background 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--pagination-bullet-active-color);
+}
+
+/* Commission Section */
+.commission-section {
+  padding: 40px;
+  background-color: #f9f9f9;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.commission-text {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.commission-button {
+  margin: 40px 0;
+  background-color: orange;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  width: 50%;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.commission-button:hover {
+  box-shadow: inset 650px 0 0 0 #07143f;
+}
+
+.commission-button::before {
+  content: "🎨"; /* Optional icon */
+  margin-right: 10px;
+}
+
+/* Modal Form Styling */
+.commission-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input,
+textarea,
+select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Responsive Design */
+
+/* Tablet Devices */
+@media (max-width: 992px) {
+  .artwork-carousel-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .carousel-heading {
+    font-size: 2rem;
+  }
+
+  .artwork-swiper {
+    height: 300px;
+  }
+
+  .swiper-caption {
+    font-size: 0.9em;
+    padding: 9px 14px;
+    bottom: 15px;
+    left: 15px;
+  }
+
+  .custom-swiper-button-prev,
+  .custom-swiper-button-next {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+  .artwork-carousel-container {
+    width: 100%;
+    margin: 20px 0;
+    padding: 10px;
+  }
+
+  .carousel-heading {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .artwork-swiper {
+    height: 250px;
+  }
+
+  .swiper-caption {
+    font-size: 0.8em;
+    padding: 6px 10px;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .custom-swiper-button-prev,
+  .custom-swiper-button-next {
+    width: 30px;
+    height: 30px;
+    font-size: 1em;
+  }
+
+  .swiper-image {
+    object-fit: cover;
+  }
+}

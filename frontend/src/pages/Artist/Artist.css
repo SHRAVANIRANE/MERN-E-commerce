@@ -1,0 +1,96 @@
+/* fourth section */
+.fourth-section {
+  width: 100%;
+}
+.fourth-section .fourth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fourth-section h1 span {
+  position: relative;
+  font-family: mv boli;
+  margin-left: 15px;
+  color: orange;
+}
+.fourth-section h1 span::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: orange;
+  display: block;
+  position: relative;
+}
+.fourth-section .fourth .image img {
+  margin-top: 123px;
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  border: 10px solid #bcbbbb;
+  transition: 0.3s;
+}
+
+.fourth-section .fourth .image h1 {
+  text-align: center;
+  margin-top: 5px;
+  font-family: mv boli;
+  color: #000;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap; /* Prevents text from breaking into two lines */
+  overflow: hidden; /* Ensure the content stays within bounds */
+  text-overflow: ellipsis; /* Optional: Add "..." if the name is too long */
+}
+.fourth-section .fourth .image:hover h1 {
+  opacity: 1; /* Show the name when the image is hovered over */
+}
+.fourth-section .fourth .text {
+  font-size: 17px;
+}
+.fourth-section .text .top-h1 {
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fourth-section .text .bottom-h1 {
+  margin: 27px;
+  text-align: center;
+}
+.fourth-section .text h1 b {
+  margin: 0 7px;
+  color: #fac001;
+  font-family: mv boli;
+}
+.fourth-section .text {
+  margin-left: 100px;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+  .fourth-section .fourth {
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  .fourth-section .fourth .image img {
+    height: 250px;
+    width: 250px;
+  }
+
+  .fourth-section .text {
+    margin: 10px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .fourth-section .fourth .image img {
+    height: 270px;
+    width: 270px;
+  }
+
+  .fourth-section .text {
+    font-size: 24px;
+  }
+}

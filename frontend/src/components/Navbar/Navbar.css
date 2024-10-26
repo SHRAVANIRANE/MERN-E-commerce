@@ -1,0 +1,153 @@
+nav {
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+
+nav .navbar {
+  display: flex;
+  justify-content: space-between; /* Adjusted for better alignment */
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 0 20px rgba(74, 70, 70, 0.3);
+  position: relative;
+  z-index: 1000;
+}
+
+nav .navbar .logo img {
+  width: 110px;
+}
+
+nav .navbar .nav-text ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav .navbar .nav-text ul li {
+  font-weight: 500;
+  list-style: none;
+  margin: 0 15px;
+  cursor: pointer;
+  font-size: 18px;
+  position: relative;
+}
+
+.nav-text ul li hr {
+  background: #fac001;
+  height: 3px;
+  border-radius: 10px;
+  border: none;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+nav .navbar .buttons {
+  display: flex;
+  align-items: center;
+}
+
+.buttons .cart i {
+  margin-right: 20px;
+  font-size: larger;
+}
+
+.buttons .login-signup button {
+  background-color: orange;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.buttons .login-signup button:hover {
+  box-shadow: inset 80px 0 0 0 #07143f;
+}
+
+.buttons .login-signup button:active {
+  background-color: #fccf3d;
+}
+
+/*Responsive Design*/
+
+/* Hamburger icon */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Hide nav links by default on small screens */
+@media (max-width: 900px) {
+  .nav-text {
+    display: none;
+  }
+  /* When the menu is open, show the nav links */
+  .nav-text.mobile {
+    display: flex;
+    flex-direction: column;
+    top: 60px;
+    left: 0;
+    background-color: white;
+    z-index: 999;
+  }
+
+  .navbar .logo img {
+    width: 50px;
+  }
+  nav .navbar .nav-text ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar .nav-text ul li {
+    margin: 10px 0;
+    font-size: 18px;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .buttons .cart i {
+    margin-right: 15px;
+  }
+
+  .buttons .login-signup button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+@media (max-width: 555px) {
+  .hamburger {
+    font-size: 19px;
+  }
+  nav .navbar .logo img {
+    width: 70px;
+  }
+  nav .nav-text.mobile ul li {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 410px) {
+  .hamburger {
+    font-size: 19px;
+  }
+  nav .navbar .logo img {
+    width: 70px;
+  }
+  nav .nav-text.mobile ul li {
+    font-size: 15px;
+  }
+}

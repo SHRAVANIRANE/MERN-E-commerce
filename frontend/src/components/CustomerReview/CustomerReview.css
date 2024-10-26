@@ -1,0 +1,154 @@
+.review-section {
+  text-align: center;
+  height: 40vh;
+  padding: 40px 20px;
+}
+
+.collab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.collab span {
+  position: relative;
+  font-family: mv boli;
+  margin-left: 15px;
+  color: orange;
+}
+
+.review-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.slider-container {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.slider-container .card {
+  height: auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: all 0.3s ease;
+}
+
+.review-text {
+  font-size: 1.3rem; /* Slightly increase font size */
+  color: #555;
+  font-style: italic;
+  margin-bottom: 15px; /* Add more space below the review */
+}
+
+.review-details {
+  margin: 20px;
+}
+
+.review-details .name {
+  font-size: 1.1rem;
+  color: #555;
+  font-style: italic;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.rating {
+  font-size: 1.1rem;
+  color: orange;
+  margin-top: 5px; /* Add a bit of space between the name and rating */
+}
+
+.arrow {
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: orange;
+  padding: 0 30px; /* Add more padding to make arrows more clickable */
+}
+
+.arrow:hover {
+  color: #333;
+}
+.rating {
+  font-size: 1.5rem;
+  color: orange; /* Adjust color for stars */
+  margin-top: 5px;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .collab {
+    font-size: 29px;
+  }
+
+  .review-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .slider-container {
+    width: 100%; /* Use more of the screen width on smaller screens */
+    max-width: none;
+  }
+
+  .slider-container .card {
+    padding: 15px;
+  }
+
+  .review-text {
+    font-size: 1.1rem;
+  }
+
+  .review-details .name {
+    font-size: 1rem;
+  }
+
+  .arrow {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .collab {
+    font-size: 1.5rem;
+  }
+
+  .review-container {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+  }
+
+  .slider-container .card {
+    padding: 10px;
+  }
+
+  .review-text {
+    font-size: 1rem;
+  }
+
+  .review-details .name {
+    font-size: 0.9rem;
+  }
+
+  .arrow {
+    font-size: 1.5rem;
+    padding: 0 20px; /* Reduce padding for small screens */
+    margin: 5px; /* Add some margin between arrows */
+  }
+
+  /* Align arrows side by side */
+  .review-container .arrow {
+    display: inline-block;
+    margin: 0 10px;
+  }
+}

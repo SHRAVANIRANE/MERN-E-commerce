@@ -1,0 +1,120 @@
+.place-order {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 50px;
+  margin-top: 100px;
+}
+.place-order-left {
+  width: 100%;
+  max-width: max(30%, 500px);
+}
+.place-order-left .place-order-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+.place-order-left input {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #c3c3c3;
+  outline: none;
+  border-radius: 4px;
+  outline-color: tomato;
+}
+.place-order-left .multi-fields {
+  display: flex;
+  gap: 10px;
+}
+.place-order-right {
+  width: 100%;
+  max-width: max(40%, 500px);
+}
+.place-order .cart-total button {
+  margin-top: 30px;
+}
+/* Modal Background */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  z-index: 1000; /* Ensures the modal is on top */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px; /* Limit width */
+  width: 90%; /* Responsive width */
+}
+
+/* Header */
+.modal-content h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #333; /* Darker color for better readability */
+}
+
+/* Paragraph */
+.modal-content p {
+  margin: 10px 0;
+  color: #666; /* Lighter color for less emphasis */
+}
+
+/* Button */
+.modal-content button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Button Hover Effect */
+.modal-content button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .place-order {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .place-order-left,
+  .place-order-right {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .place-order-left .multi-fields input {
+    width: 100%;
+  }
+
+  .modal-content {
+    width: 95%;
+  }
+
+  .modal-content h2 {
+    font-size: 20px;
+  }
+
+  .modal-content p {
+    font-size: 16px;
+  }
+}

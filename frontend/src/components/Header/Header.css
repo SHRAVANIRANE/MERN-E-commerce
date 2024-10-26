@@ -1,0 +1,168 @@
+section {
+  width: 100%;
+}
+marquee {
+  width: 100%;
+  background-color: #f6f6f6;
+  color: black;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+section .main-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 15px;
+}
+section .main-section .image img {
+  width: 650px;
+  height: 550px;
+  object-fit: cover;
+}
+
+section .main-section .main-text {
+  position: relative;
+  margin-right: 30px;
+  max-width: 600px;
+}
+section .main-section .main-text h1 {
+  color: orange;
+  font-size: 60px;
+  position: relative;
+  bottom: 10px;
+  font-family: mv boli;
+  width: fit-content;
+}
+section .main-section .main-text p {
+  line-height: 1.6;
+  font-size: 17px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin-top: 20px;
+}
+section .main-section .main-text button {
+  padding: 14px 28px;
+  font-size: 15px;
+  margin: 25px 0;
+  background-color: orange;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+section .main-section .main-text button i {
+  margin-left: 6px;
+  transition: 0.3s;
+}
+section .main-section .main-text button:hover {
+  box-shadow: inset 130px 0 0 0 #07143f;
+}
+
+/* Responsive Design */
+
+/* Tablets and Medium Screens */
+@media (max-width: 1200px) {
+  section .main-section {
+    padding: 30px 15px;
+  }
+
+  section .main-section .image img {
+    width: 500px;
+    height: 450px;
+  }
+
+  section .main-section .main-text h1 {
+    font-size: 48px;
+  }
+
+  section .main-section .main-text p {
+    font-size: 16px;
+  }
+
+  section .main-section .main-text button {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+}
+
+/* Tablets and Small Screens */
+@media (max-width: 900px) {
+  section .main-section {
+    flex-direction: column; /* Stack image and text vertically */
+    text-align: center;
+  }
+
+  section .main-section .image img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    margin-bottom: 20px; /* Spacing between image and text */
+  }
+
+  section .main-section .main-text {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  section .main-section .main-text h1 {
+    font-size: 36px;
+  }
+
+  section .main-section .main-text p {
+    font-size: 16px;
+  }
+
+  section .main-section .main-text button {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+}
+
+/* Mobile Screens */
+@media (max-width: 555px) {
+  marquee {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  section .main-section .image img {
+    max-width: 300px;
+  }
+
+  section .main-section .main-text h1 {
+    font-size: 28px;
+  }
+
+  section .main-section .main-text p {
+    font-size: 14px;
+  }
+
+  section .main-section .main-text button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 410px) {
+  .navbar .logo {
+    display: none; /* Optional: Hide logo on very small screens */
+  }
+
+  section .main-section .image img {
+    max-width: 250px;
+  }
+
+  section .main-section .main-text h1 {
+    font-size: 24px;
+  }
+
+  section .main-section .main-text p {
+    font-size: 12px;
+  }
+
+  section .main-section .main-text button {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}

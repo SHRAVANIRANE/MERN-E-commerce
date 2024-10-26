@@ -1,0 +1,117 @@
+.product-display {
+  justify-content: space-between;
+  display: flex;
+}
+.product-display-img img {
+  width: 496px;
+  height: 600px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.product-display-img-list {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 30px;
+}
+.product-display-img-list img {
+  height: 150px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.product-display-right {
+  margin: 0px 70px;
+}
+.product-display-right h1 {
+  color: #000;
+  margin: 20px 0px;
+  font-size: 43px;
+  font-weight: 700;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.product-display-right .price {
+  margin: 20px 0px;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.product-display-right p {
+  margin: 20px 0px;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.product-display-right button {
+  margin-right: 25px;
+  width: 200px;
+  height: 50px;
+  background-color: #ed8f45;
+  color: #fbf0f4;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: 700;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.product-display-right button:hover {
+  box-shadow: inset 200px 0 0 0 #07143f;
+  color: color;
+}
+/* review */
+.review .review-form {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 50px;
+}
+.review .review-form h1 {
+  padding: 40px;
+}
+
+.review .review-form input {
+  background-color: #f6f6f6;
+  padding: 15px;
+  margin: 20px 0px;
+}
+.review .review-form textarea {
+  background-color: #f6f6f6;
+  padding: 15px;
+  margin: 20px 0px;
+}
+.submit-btn {
+  width: 200px;
+  height: 50px;
+  background-color: #ed8f45;
+  color: #fbf0f4;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: 700;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.submit-btn:hover {
+  box-shadow: inset 200px 0 0 0 #07143f;
+  color: color;
+}
+.star-rating {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.star {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #ccc;
+  margin-right: 10px;
+}
+
+.star.selected {
+  color: orange;
+}
+
+.star:hover {
+  color: orange;
+}
