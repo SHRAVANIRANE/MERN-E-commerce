@@ -16,8 +16,10 @@ app.options("*", cors());
 
 app.use(
   cors({
-    origin: "https://mern-e-commerce-admin-6jeo.onrender.com",
-    origin: "https://mern-e-commerce-frontend-044s.onrender.com",
+    origin: [
+      "https://mern-e-commerce-admin-6jeo.onrender.com",
+      "https://mern-e-commerce-frontend-044s.onrender.com",
+    ],
   })
 );
 
