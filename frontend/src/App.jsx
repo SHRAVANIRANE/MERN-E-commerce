@@ -8,7 +8,6 @@ import Product from "./pages/Product/Product";
 import Footer from "./components/Footer/Footer";
 import Artist from "./pages/Artist/Artist";
 import ArtDisplayPage from "./pages/ArtDisplayPage/ArtDisplayPage";
-import Collaborations from "./pages/Collaborations/Collaborations";
 import LoginPopUp from "./components/LoginPopUp/LoginPopUp";
 import Commissioned from "./pages/Commissioned/Commissioned";
 import Verify from "./pages/Verify/Verify";
