@@ -59,7 +59,7 @@ const PlaceOrder = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:4000/order/place", {
+      const response = await fetch("https://mern-e-commerce-backend-jkse.onrender.com/order/place", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -86,7 +86,7 @@ const PlaceOrder = () => {
               razorpay_signature,
             } = response;
             const verifyResponse = await fetch(
-              "http://localhost:4000/order/verify-payment",
+              "https://mern-e-commerce-backend-jkse.onrender.com/order/verify-payment",
               {
                 method: "POST",
                 headers: {

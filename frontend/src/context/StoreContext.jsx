@@ -7,14 +7,16 @@ const StoreContextProvider = (props) => {
   const [all_products, setAllProducts] = useState([]);
   const [cartItems, setCartItems] = useState({});
 
+  const BASE_URL = "https://mern-e-commerce-backend-jkse.onrender.com";
+
   useEffect(() => {
-    fetch("http://localhost:4000/allproducts")
+    fetch(`${BASE_URL}/allproducts`)
       .then((response) => response.json())
       .then((data) => setAllProducts(data))
       .catch((err) => console.log(err));
 
     if (localStorage.getItem("token")) {
-      fetch("http://localhost:4000/getcart", {
+      fetch(`${BASE_URL}/getcart`, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -37,7 +39,7 @@ const StoreContextProvider = (props) => {
     const token = localStorage.getItem("token");
     console.log(token);
     if (token) {
-      fetch("http://localhost:4000/addtocart", {
+      fetch(`${BASE_URL}/addtocart`, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -67,7 +69,7 @@ const StoreContextProvider = (props) => {
 
     const token = localStorage.getItem("token");
     if (token) {
-      fetch("http://localhost:4000/removefromcart", {
+      fetch(`${BASE_URL}/removefromcart`, {
         method: "POST",
         headers: {
           Accept: "application/json",
