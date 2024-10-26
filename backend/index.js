@@ -36,16 +36,15 @@ if (!fs.existsSync(dir)) {
 app.use("/images", express.static(path.join(__dirname, "upload/images")));
 
 // Database connection with MongoDB
-mongoose.connect(
-  process.env.MONGO_URI,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  },
-  () => {
-    console.log("Connected to MongoDB");
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_DB_URL); // No options needed for latest version
+    console.log("MongoDB connected");
+  } catch (error) {
+    console.error("MongoDB connection error:", error);
+    process.exit(1); // Exit on connection failure
   }
-);
+};
 
 //API creation
 app.get("/", (req, res) => {
@@ -496,11 +495,16 @@ app.post("/order/verify-payment", async (req, res) => {
 // Route for placing order
 app.post("/order/place", authMiddleware, placeOrder);
 
-// Start the server
-app.listen(port, (error) => {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log("Backend server is running on port " + port);
-  }
+app.get("/", (req, res) => {
+  res.send("Backend is running!");
 });
+
+// Start the server
+const startServer = async () => {
+  await connectDB();
+  app.listen(port, () =>
+    console.log(`Backend server is running on port ${port}`)
+  );
+};
+
+startServer();
