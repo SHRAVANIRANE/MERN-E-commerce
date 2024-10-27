@@ -244,7 +244,7 @@ app.post("/upload", upload.single("product"), (req, res) => {
   console.log(req.file); // Log the uploaded file details
   res.json({
     success: 1,
-    image_url: `https://mern-e-commerce-backend-jkse.onrender.com/images/${req.file.filename}`,
+    image_url: `https://mern-e-commerce-frontend-044s.onrender.com/images/${req.file.filename}`,
   });
 });
 
