@@ -12,11 +12,7 @@ const ArtItem = ({ id, name, price, image, category }) => {
     <div className="art-item">
       <div className="art-item-image-container">
         <Link to={`/product/${id}`}>
-          <img
-            className="art-item-image"
-            src={`${BASE_URL}/images/${image}`}
-            alt={name}
-          />
+          <img className="art-item-image" src={image} alt={name} />
         </Link>
 
         {!cartItems[id] ? (
