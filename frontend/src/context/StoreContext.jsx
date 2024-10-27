@@ -99,7 +99,7 @@ const StoreContextProvider = (props) => {
 
   const contextValue = {
     art_list,
-    URL,
+    BASE_URL,
     all_products,
     cartItems,
     setCartItems,
