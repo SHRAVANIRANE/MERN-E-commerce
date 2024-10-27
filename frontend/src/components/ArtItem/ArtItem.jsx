@@ -5,8 +5,7 @@ import { StoreContext } from "../../context/StoreContext";
 import { Link } from "react-router-dom";
 
 const ArtItem = ({ id, name, price, image, category }) => {
-  const { cartItems, addToCart, removeFromCart, BASE_URL } =
-    useContext(StoreContext);
+  const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
 
   return (
     <div className="art-item">
