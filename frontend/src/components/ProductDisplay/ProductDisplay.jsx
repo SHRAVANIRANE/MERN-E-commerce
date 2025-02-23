@@ -15,7 +15,7 @@ const ProductDisplay = (props) => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch("https://mern-e-commerce-backend-jkse.onrender.com/allreviews") // Update to match your reviews API URL
+    fetch("http://localhost:4000/allreviews") // Update to match your reviews API URL
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
@@ -31,7 +31,7 @@ const ProductDisplay = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch("https://mern-e-commerce-backend-jkse.onrender.com/allreviews", {
+      const response = await fetch("http://localhost:4000/allreviews", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

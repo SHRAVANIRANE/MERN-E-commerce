@@ -1,6 +1,6 @@
 require("dotenv").config();
 const Razorpay = require("razorpay");
-const port = process.env.PORT || 4000;
+const port = 4000;
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -10,16 +10,22 @@ const path = require("path");
 const fs = require("fs");
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
-
 app.use(express.json());
-app.options("*", cors());
+app.use(express.urlencoded({ extended: true }));
+
+// Allow both ports 5173 and 5174
+const allowedOrigins = ["http://localhost:5173", "http://localhost:5174"];
 
 app.use(
   cors({
-    origin: [
-      "https://mern-e-commerce-admin-6jeo.onrender.com",
-      "https://mern-e-commerce-frontend-044s.onrender.com",
-    ],
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
   })
 );
 
@@ -32,15 +38,9 @@ if (!fs.existsSync(dir)) {
 app.use("/images", express.static(path.join(__dirname, "upload/images")));
 
 // Database connection with MongoDB
-const connectDB = async () => {
-  try {
-    await mongoose.connect(process.env.MONGO_DB_URL); // No options needed for latest version
-    console.log("MongoDB connected");
-  } catch (error) {
-    console.error("MongoDB connection error:", error);
-    process.exit(1); // Exit on connection failure
-  }
-};
+mongoose.connect(
+  "mongodb+srv://shravanirane:chamatkar@cluster0.pvlde.mongodb.net/e-commerce"
+);
 
 //API creation
 app.get("/", (req, res) => {
@@ -244,7 +244,7 @@ app.post("/upload", upload.single("product"), (req, res) => {
   console.log(req.file); // Log the uploaded file details
   res.json({
     success: 1,
-    image_url: `https://mern-e-commerce-frontend-044s.onrender.com/images/${req.file.filename}`,
+    image_url: `http://localhost:${port}/images/${req.file.filename}`,
   });
 });
 
@@ -327,7 +327,6 @@ const orderSchema = new mongoose.Schema({
   date: { type: Date, default: Date.now },
   payment: { type: Boolean, default: false },
   receipt: { type: String, required: true },
-  razorpay_order_id: { type: String, required: true },
 });
 
 //Commission Model
@@ -408,8 +407,8 @@ const Order = mongoose.model("Order", orderSchema);
 // Place order and initiate payment
 const placeOrder = async (req, res) => {
   try {
-    const { userId, items, amount, address, razorpay_order_id } = req.body;
-    const receiptNumber = `REC-${Date.now()}`;
+    const { userId, items, amount, address, receipt } = req.body;
+    console.log("Order Request Body:", req.body); // Log incoming request
 
     if (!userId)
       return res
@@ -419,13 +418,13 @@ const placeOrder = async (req, res) => {
     const newOrder = new Order({
       userId,
       items,
-      receipt: receiptNumber,
       amount,
       address,
-      razorpay_order_id: "default",
+      receipt: receipt || `receipt_${Date.now()}`,
     });
 
     await newOrder.save();
+    console.log("Order saved successfully:", newOrder);
 
     // Clear user cart after order
     await Users.findByIdAndUpdate(userId, { cartData: {} });
@@ -434,15 +433,9 @@ const placeOrder = async (req, res) => {
     const session = await razorpay.orders.create({
       amount: amount * 100, // Convert to paise
       currency: "INR",
-      receipt: receiptNumber,
+      receipt: newOrder._id.toString(),
       payment_capture: 1,
     });
-
-    console.log("Razorpay session:", session);
-
-    // Save the order id in the database
-    newOrder.razorpay_order_id = session.id;
-    await newOrder.save();
 
     // Send the order id to the front-end
     res.json({ success: true, orderId: session.id });
@@ -464,22 +457,13 @@ app.post("/order/verify-payment", async (req, res) => {
     .digest("hex");
 
   if (expectedSignature === razorpay_signature) {
-    const order = await Order.findOne({ razorpay_order_id });
-    console.log("Order:", order);
-    console.log(razorpay_order_id);
-
-    if (!order) {
-      return res
-        .status(400)
-        .json({ success: false, message: "Invalid order id" });
-    }
+    const order = await Order.findOne({ receipt: razorpay_order_id });
 
     // Mark order as 'paid'
     await Order.findOneAndUpdate(
       { _id: order._id },
       { status: "Paid", payment: true }
     );
-
     res.status(200).json({ success: true, message: "Payment verified" });
   } else {
     res
@@ -491,16 +475,11 @@ app.post("/order/verify-payment", async (req, res) => {
 // Route for placing order
 app.post("/order/place", authMiddleware, placeOrder);
 
-app.get("/", (req, res) => {
-  res.send("Backend is running!");
-});
-
 // Start the server
-const startServer = async () => {
-  await connectDB();
-  app.listen(port, () =>
-    console.log(`Backend server is running on port ${port}`)
-  );
-};
-
-startServer();
+app.listen(port, (error) => {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("Backend server is running on port " + port);
+  }
+});

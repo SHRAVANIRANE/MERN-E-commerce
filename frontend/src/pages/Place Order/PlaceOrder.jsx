@@ -59,7 +59,7 @@ const PlaceOrder = () => {
     };
 
     try {
-      const response = await fetch("https://mern-e-commerce-backend-jkse.onrender.com/order/place", {
+      const response = await fetch("http://localhost:4000/order/place", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -86,7 +86,7 @@ const PlaceOrder = () => {
               razorpay_signature,
             } = response;
             const verifyResponse = await fetch(
-              "https://mern-e-commerce-backend-jkse.onrender.com/order/verify-payment",
+              "http://localhost:4000/verify-payment",
               {
                 method: "POST",
                 headers: {
@@ -127,6 +127,7 @@ const PlaceOrder = () => {
         rzp.open();
         console.log("Payment modal opened with options:", options);
       } else {
+        console.error("Error during submission:", responseData);
         alert("Something went wrong, order not placed.");
       }
     } catch (error) {

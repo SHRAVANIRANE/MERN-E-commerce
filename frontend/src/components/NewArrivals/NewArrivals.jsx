@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const NewArrivals = () => {
   const [new_collection, setNewCollection] = useState([]);
   useEffect(() => {
-    fetch("https://mern-e-commerce-backend-jkse.onrender.com/newarrivals")
+    fetch("http://localhost:4000/newarrivals")
       .then((response) => response.json())
       .then((data) => {
         setNewCollection(data);

@@ -7,7 +7,7 @@ const CustomerReview = () => {
 
   useEffect(() => {
     // Fetch reviews from the server
-    fetch("https://mern-e-commerce-backend-jkse.onrender.com/allreviews") // Update the URL to your reviews API
+    fetch("http://localhost:4000/allreviews") // Update the URL to your reviews API
       .then((response) => response.json())
       .then((data) => {
         setReviews(data); // Set the fetched reviews

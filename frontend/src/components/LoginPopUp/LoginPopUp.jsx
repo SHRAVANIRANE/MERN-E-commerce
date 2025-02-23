@@ -57,17 +57,14 @@ const LoginPopUp = ({ setShowLogin }) => {
     }
 
     try {
-      const response = await fetch(
-        "https://mern-e-commerce-backend-jkse.onrender.com/login",
-        {
-          method: "POST",
-          headers: {
-            Accept: "application/form-data",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await fetch("http://localhost:4000/login", {
+        method: "POST",
+        headers: {
+          Accept: "application/form-data",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
       const responseData = await response.json();
       console.log("Response Data: ", responseData);
@@ -100,17 +97,14 @@ const LoginPopUp = ({ setShowLogin }) => {
     }
 
     try {
-      const response = await fetch(
-        "https://mern-e-commerce-backend-jkse.onrender.com/signup",
-        {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await fetch("http://localhost:4000/signup", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
       const responseData = await response.json();
       console.log("Response Data: ", responseData);
