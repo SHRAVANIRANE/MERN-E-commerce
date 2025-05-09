@@ -11,7 +11,7 @@ const ArtItem = ({ id, title, price, image, category }) => {
     <div className="art-item">
       <div className="art-item-image-container">
         <Link to={`/product/${id}`}>
-          <img className="art-item-image" src={`https://flatheads-backend.onrender.com/images/${image}`} alt={title} />
+          <img className="art-item-image" src={image} alt={title} />
         </Link>
 
         {!cartItems[id] ? (
