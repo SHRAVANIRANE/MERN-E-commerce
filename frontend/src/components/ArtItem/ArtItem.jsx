@@ -14,7 +14,7 @@ const ArtItem = ({ id, title, price, image, category }) => {
           <img
             className="art-item-image"
             src={`https://flatheads-backend.onrender.com/images/${image}`}
-            alt={name}
+            alt={title}
           />
         </Link>
 
