@@ -13,6 +13,7 @@ const crypto = require("crypto");
 const nodemailer = require("nodemailer");
 
 app.use(express.json());
+app.use(cors()); // Allow all origins temporarily
 app.options("*", cors());
 
 const allowedOrigins = [
