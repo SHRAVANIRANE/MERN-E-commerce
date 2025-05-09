@@ -13,12 +13,14 @@ const crypto = require("crypto");
 const nodemailer = require("nodemailer");
 
 app.use(express.json());
+app.use(cors()); // Allow all origins temporarily
 app.options("*", cors());
 
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:5174",
   "https://flatheads-frontend.onrender.com",
+  "https://flaheads-admin.onrender.com",
 ];
 app.use(
   cors({
