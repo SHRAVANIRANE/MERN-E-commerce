@@ -15,7 +15,7 @@ const nodemailer = require("nodemailer");
 app.use(express.json());
 app.options("*", cors());
 
-const allowedOrigins = ["http://localhost:5173", "http://localhost:5174"];
+const allowedOrigins = ["http://localhost:5173", "http://localhost:5174","https://flatheads-frontend.onrender.com"];
 app.use(
   cors({
     origin: function (origin, callback) {
@@ -243,7 +243,7 @@ app.post("/upload", upload.single("product"), (req, res) => {
   console.log(req.file); // Log the uploaded file details
   res.json({
     success: 1,
-    image_url: `http://localhost:${port}/images/${req.file.filename}`,
+    image_url: `https://flatheads-backend.onrender.com/images/${req.file.filename}`,
   });
 });
 
@@ -382,7 +382,7 @@ app.post(
         name,
         email,
         description,
-        referenceImage: `http://localhost:${port}/images/${req.file.filename}`, // URL for the uploaded image
+        referenceImage: `https://flatheads-backend.onrender.com/images/${req.file.filename}`, // URL for the uploaded image
         preferredMedium,
         budget,
         deliveryDeadline,
