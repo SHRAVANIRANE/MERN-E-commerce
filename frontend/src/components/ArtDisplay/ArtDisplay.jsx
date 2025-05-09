@@ -3,8 +3,6 @@ import { StoreContext } from "../../context/StoreContext";
 import "./ArtDisplay.css";
 import ArtItem from "../ArtItem/ArtItem";
 
-const BASE_URL = "https://flatheads-backend.onrender.com" || "http://localhost:4000";
-
 const ArtDisplay = ({ category }) => {
   const { all_products } = useContext(StoreContext);
 
@@ -40,7 +38,7 @@ const ArtDisplay = ({ category }) => {
             id={item.id}
             title={item.title}
             description={item.description}
-            image={`${BASE_URL}/images/${item.image}`}
+            image={item.image}
             price={item.old_price}
             category={item.category}
           />
