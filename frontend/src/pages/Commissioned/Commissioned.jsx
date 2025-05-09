@@ -19,6 +19,9 @@ const Commissioned = () => {
   const [budget, setBudget] = useState("");
   const [deliveryDeadline, setDeliveryDeadline] = useState("");
   const [referenceImageFile, setReferenceImageFile] = useState(null);
+
+  const today = new Date().toISOString().split("T")[0];
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -61,7 +64,7 @@ const Commissioned = () => {
     <>
       <div id="main-content">
         <h2 className="carousel-heading">
-          Our <span>Commissioned Artwork</span>
+          Our <span>Commissioned Shoes</span>
         </h2>
         <div className="artwork-carousel-container">
           <Swiper
@@ -84,16 +87,13 @@ const Commissioned = () => {
                     className="swiper-image"
                   />
                 </div>
-                <p className="swiper-caption">{image.desc}</p>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
 
         <div className="commission-section">
-          <h3 className="commission-text">
-            Wanna commission your own artwork?
-          </h3>
+          <h3 className="commission-text">Wanna commission your own Shoes?!</h3>
 
           <form className="commission-form">
             <label>Name</label>
@@ -155,6 +155,7 @@ const Commissioned = () => {
             <label>Delivery Deadline</label>
             <input
               type="date"
+              min={today}
               required
               value={deliveryDeadline}
               onChange={(e) => setDeliveryDeadline(e.target.value)}

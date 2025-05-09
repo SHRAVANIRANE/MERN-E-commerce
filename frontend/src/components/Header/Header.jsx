@@ -10,24 +10,27 @@ const Header = () => {
       <div className="main-section">
         <div className="image">
           <img
-            src="https://png.pngtree.com/png-clipart/20230914/original/pngtree-painting-supply-vector-png-image_12160914.png"
+            src="https://png.pngtree.com/png-clipart/20230417/original/pngtree-green-transparent-sports-shoes-png-image_9062733.png"
             alt=""
           />
         </div>
         <div className="main-text">
-          <h1>The Artful Touch</h1>
+          <h1>Flatheads</h1>
           <p>
-            Art is a language spoken without words, conveying feelings that
-            words often fail to express. It's a journey of discovery, where each
-            piece holds a unique narrative, inviting viewers to immerse
-            themselves in its beauty. At The Artful Touch, we believe in the
-            transformative power of art, igniting imagination and sparking
-            conversations that resonate deeply within us all. Join us in our
-            appreciation of the boundless creativity that enriches our lives.Let
-            us be your guide through the vast landscapes of creativity, where
-            every stroke tells a story and every color evokes a feeling. Welcome
-            to The Artful Touch, where art is not just observed, but experienced
-            in its fullest essence.
+            Flatheads is a modern lifestyle brand from India that designs
+            stylish, lightweight, and breathable shoes for everyday wear. Known
+            for their innovative use of materials like bamboo and banana fiber,
+            Flatheads creates footwear that blends comfort with contemporary
+            aesthetics. The brand focuses on sleek, minimalistic designs that
+            suit both casual and professional settings. With an emphasis on
+            quality craftsmanship and durability, Flatheads aims to provide a
+            perfect balance of fashion and functionality. Their shoes are
+            designed to handle India’s diverse climate while offering all-day
+            comfort. Targeting urban professionals and trend-conscious
+            consumers, the brand has gained popularity for its unique approach
+            to footwear. Flatheads represents a fusion of innovation,
+            sustainability, and modern design, making it a go-to choice for
+            those seeking stylish yet practical shoes.
           </p>
           <button>
             <Link to={"/ArtDisplayPage"}>Shop Now</Link>

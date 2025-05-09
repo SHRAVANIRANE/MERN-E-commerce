@@ -26,7 +26,10 @@ const Navbar = ({ setShowLogin }) => {
       <div className="navbar">
         <div className="logo">
           <Link to="/">
-            <img src={assets.TheArtfulTouch} alt="The Artful Touch Logo" />
+            <img
+              src="https://i.pinimg.com/originals/70/71/3d/70713de479955be2e7cbcc520ed84e66.jpg"
+              alt="The Artful Touch Logo"
+            />
           </Link>
         </div>
 

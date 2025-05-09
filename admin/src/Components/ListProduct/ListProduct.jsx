@@ -7,7 +7,7 @@ const ListProduct = () => {
 
   // Fetching data from the backend API
   const fetchInfo = async () => {
-    await fetch("https://mern-e-commerce-backend-jkse.onrender.com/allproducts")
+    await fetch("http://localhost:4000/allproducts")
       .then((res) => res.json())
       .then((data) => {
         setAllProducts(data);
@@ -22,7 +22,7 @@ const ListProduct = () => {
   }, []);
 
   const remove_product = async (id) => {
-    await fetch("https://mern-e-commerce-backend-jkse.onrender.com/removeproduct", {
+    await fetch("http://localhost:4000/removeproduct", {
       method: "POST",
       headers: {
         Accept: "application/json",

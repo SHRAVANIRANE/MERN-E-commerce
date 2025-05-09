@@ -3,9 +3,14 @@ import logo from "./logo.png";
 import header_img from "./header_img.png";
 import search_icon from "./search_icon.png";
 import file from "./file.png";
-import shrav from "./shrav.jpg";
+import shravani from "./shravani.jpeg";
 import collab1 from "./collab1.webp";
 import openart from "./openart..jpg";
+
+import boots from "./Boots.jpg"; //
+import crocs from "./crocs.jpg"; //
+import Sneakers from "./Sneakers.jpg"; //
+import SoccerShoes from "./SoccerShoes.jpg"; //
 
 import add_icon_white from "./add_icon_white.png";
 import add_icon_green from "./add_icon_green.png";
@@ -23,7 +28,6 @@ import bag_icon from "./bag_icon.png";
 import logout_icon from "./logout_icon.png";
 import parcel_icon from "./parcel_icon.png";
 
-import a from "./a.png";
 import b from "./b.png";
 import c from "./c.png";
 import d from "./d.png";
@@ -41,7 +45,6 @@ import o from "./o.png";
 import p from "./p.png";
 import TheArtfulTouch from "./TheArtfulTouch.png";
 
-import animeKeychain1 from "./animeKeychain1.jpg";
 import keychain1 from "./keychain1.jpg";
 import keychain2 from "./keychain2.jpg";
 import keychain3 from "./keychain3.jpg";
@@ -106,11 +109,10 @@ export const assets = {
   logout_icon,
   bag_icon,
   parcel_icon,
-  shrav,
+  shravani,
 };
 
 export const artworks = {
-  a,
   b,
   c,
   d,
@@ -169,20 +171,20 @@ export const personalized_art = [
 
 export const menu_list = [
   {
-    menu_name: "Keychain",
-    menu_image: animeKeychain1,
+    menu_name: "Sneakers",
+    menu_image: Sneakers,
   },
   {
-    menu_name: "Bookmarks",
-    menu_image: animeBookmark1,
+    menu_name: "Boots",
+    menu_image: boots,
   },
   {
-    menu_name: "Tote Bags",
-    menu_image: toteBag1,
+    menu_name: "Crocs",
+    menu_image: crocs,
   },
   {
-    menu_name: "Art Pieces",
-    menu_image: c,
+    menu_name: "Soccer Shoes",
+    menu_image: SoccerShoes,
   },
 ];
 
@@ -226,7 +228,7 @@ export const art_list = [
   {
     _id: 1,
     name: "Inosuke Hashibira",
-    image: a,
+    image: b,
     price: 5000,
     description:
       "Inosuke Hashibira, one of the main characters of Demon Slayer: Kimetsu no Yaiba. Always likes to think he is the strongest fighter in any situation, wants others to respect and praise him for his skills.",

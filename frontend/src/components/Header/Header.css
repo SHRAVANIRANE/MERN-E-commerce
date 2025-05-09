@@ -28,11 +28,12 @@ section .main-section .main-text {
   max-width: 600px;
 }
 section .main-section .main-text h1 {
-  color: orange;
+  color: Black;
   font-size: 60px;
   position: relative;
   bottom: 10px;
-  font-family: mv boli;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   width: fit-content;
 }
 section .main-section .main-text p {
@@ -45,7 +46,7 @@ section .main-section .main-text button {
   padding: 14px 28px;
   font-size: 15px;
   margin: 25px 0;
-  background-color: orange;
+  background: black;
   color: #fff;
   cursor: pointer;
   border: none;
@@ -56,7 +57,8 @@ section .main-section .main-text button i {
   transition: 0.3s;
 }
 section .main-section .main-text button:hover {
-  box-shadow: inset 130px 0 0 0 #07143f;
+  box-shadow: inset 130px 0 0 0 #fff;
+  color: black;
 }
 
 /* Responsive Design */

@@ -7,11 +7,11 @@ const Artist = () => {
     <div className="fourth-section" id="artist">
       <div className="fourth">
         <div className="image">
-          <img src={assets.shrav} alt="" />
+          <img src={assets.shravani} alt="" />
         </div>
         <div className="text">
           <h1 className="bottom-h1">
-            About <b>Shravani Rane</b> - Art Entrepreneur
+            About <b>Shravani Rane</b>
           </h1>
           <br />I am Shravani Rane, a passionate and self-taught artist on an
           extraordinary journey through the realm of art. With a deep love for
@@ -25,7 +25,7 @@ const Artist = () => {
           reflects a genuine passion for the craft and a commitment to
           continuous growth.
           <h1 className="bottom-h1">
-            Translating <b>Anime Magic</b> onto Canvas
+            Translating <b>Anime Magic</b> onto Shoes
           </h1>
           My art is a visual celebration of my favorite anime moments. With
           every brushstroke and pencil mark, I put life into the iconic

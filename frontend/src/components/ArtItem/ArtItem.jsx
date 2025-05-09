@@ -4,7 +4,7 @@ import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
 import { Link } from "react-router-dom";
 
-const ArtItem = ({ id, name, price, image, category }) => {
+const ArtItem = ({ id, title, price, image, category }) => {
   const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
 
   return (
@@ -41,7 +41,7 @@ const ArtItem = ({ id, name, price, image, category }) => {
         )}
       </div>
       <div className="art-item-info">
-        <p className="art-item-name">{name}</p>
+        <p className="art-item-name">{title}</p>
         <p className="art-item-price">₹{price}</p>
         <p className="art-item-category">Category: {category}</p>
       </div>

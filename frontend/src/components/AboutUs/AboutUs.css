@@ -13,26 +13,13 @@
   font-size: 40px;
   text-align: center;
   margin-top: 60px;
-  font-family: mv boli;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .third-section h1 {
   font-size: 30px;
   margin-bottom: 20px;
 }
-.third-section h1 span {
-  position: relative;
-  font-family: mv boli;
-  margin-left: 15px;
-  color: orange;
-}
-.third-section h1 span::after {
-  content: "";
-  width: 100%;
-  height: 2px;
-  background-color: orange;
-  display: block;
-  position: relative;
-}
+
 .third-section .third .image img {
   width: 100%;
   max-width: 650px; /* Ensure image doesn’t stretch too much on larger screens */

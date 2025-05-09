@@ -3,6 +3,8 @@ nav {
   height: auto;
   position: relative;
   z-index: 1;
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 nav .navbar {
@@ -16,7 +18,8 @@ nav .navbar {
 }
 
 nav .navbar .logo img {
-  width: 110px;
+  width: 160px;
+  border-radius: 50%;
 }
 
 nav .navbar .nav-text ul {
@@ -26,16 +29,16 @@ nav .navbar .nav-text ul {
 }
 
 nav .navbar .nav-text ul li {
-  font-weight: 500;
+  font-weight: 400;
   list-style: none;
   margin: 0 15px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 21px;
   position: relative;
 }
 
 .nav-text ul li hr {
-  background: #fac001;
+  background: #000;
   height: 3px;
   border-radius: 10px;
   border: none;
@@ -57,7 +60,7 @@ nav .navbar .buttons {
 }
 
 .buttons .login-signup button {
-  background-color: orange;
+  background-color: #000;
   color: #fff;
   border: none;
   padding: 8px 16px;
@@ -66,13 +69,9 @@ nav .navbar .buttons {
   cursor: pointer;
   transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
-
 .buttons .login-signup button:hover {
-  box-shadow: inset 80px 0 0 0 #07143f;
-}
-
-.buttons .login-signup button:active {
-  background-color: #fccf3d;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /*Responsive Design*/

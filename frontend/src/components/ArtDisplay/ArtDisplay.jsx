@@ -36,7 +36,7 @@ const ArtDisplay = ({ category }) => {
           <ArtItem
             key={index}
             id={item.id}
-            name={item.name}
+            title={item.title}
             description={item.description}
             image={item.image}
             price={item.old_price}

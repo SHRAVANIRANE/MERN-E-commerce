@@ -14,19 +14,10 @@
 }
 .explore-menu .collab span {
   position: relative;
-  font-family: mv boli;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin-left: 10px;
-  color: orange;
+  color: Black;
 }
-h1 span::after {
-  content: "";
-  width: 100%;
-  height: 2px;
-  background-color: orange;
-  display: block;
-  position: relative;
-}
-
 .explore-menu {
   display: flex;
   flex-direction: column;

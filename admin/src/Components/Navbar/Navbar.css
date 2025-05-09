@@ -8,8 +8,8 @@
   background: white;
 }
 .nav-logo {
-  width: 90px;
-  height: 90px;
+  border-radius: 50%;
+  width: 160px;
 }
 @media (max-width: 800px) {
   .navbar {

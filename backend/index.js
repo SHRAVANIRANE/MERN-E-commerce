@@ -10,22 +10,21 @@ const path = require("path");
 const fs = require("fs");
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
+const nodemailer = require("nodemailer");
+
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.options("*", cors());
 
-// Allow both ports 5173 and 5174
 const allowedOrigins = ["http://localhost:5173", "http://localhost:5174"];
-
 app.use(
   cors({
-    origin: (origin, callback) => {
+    origin: function (origin, callback) {
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
         callback(new Error("Not allowed by CORS"));
       }
     },
-    credentials: true,
   })
 );
 
@@ -320,6 +319,8 @@ app.post("/addproduct", async (req, res) => {
 // Order Model
 const orderSchema = new mongoose.Schema({
   userId: { type: String, required: true },
+  userEmail: { type: String, required: true }, // ADD
+  userName: { type: String, required: true }, // ADD
   items: { type: Array, required: true },
   amount: { type: Number, required: true },
   address: { type: Object, required: true },
@@ -327,6 +328,7 @@ const orderSchema = new mongoose.Schema({
   date: { type: Date, default: Date.now },
   payment: { type: Boolean, default: false },
   receipt: { type: String, required: true },
+  razorpayOrderId: { type: String, required: true }, // ✅ Add this to ensure order ID is stored
 });
 
 //Commission Model
@@ -407,37 +409,54 @@ const Order = mongoose.model("Order", orderSchema);
 // Place order and initiate payment
 const placeOrder = async (req, res) => {
   try {
-    const { userId, items, amount, address, receipt } = req.body;
-    console.log("Order Request Body:", req.body); // Log incoming request
+    const { userId, items, amount, address } = req.body;
+    const user = await Users.findById(userId); // ADD
+    if (!user) throw new Error("User not found");
 
-    if (!userId)
-      return res
-        .status(400)
-        .json({ success: false, message: "userId is required" });
+    // Get product details from database
+    const productIds = items.map((item) => item.id);
+    const products = await Product.find({ id: { $in: productIds } });
 
+    // Create verified order items
+    const orderItems = items.map((item) => {
+      const product = products.find((p) => p.id === item.id);
+      return {
+        id: item.id,
+        name: product.name,
+        price: product.new_price,
+        quantity: item.quantity,
+        image: product.image,
+      };
+    });
+
+    const receipt = `receipt_${new Date().getTime()}`; // Unique receipt ID
+
+    // Create Razorpay order first
+    const session = await razorpay.orders.create({
+      amount: amount * 100, // Convert to paise
+      currency: "INR",
+      receipt: receipt,
+      payment_capture: 1,
+    });
+
+    // Save order with Razorpay Order ID directly
     const newOrder = new Order({
       userId,
-      items,
+      userEmail: user.email, // ADD
+      userName: user.name, // ADD
+      items: orderItems,
       amount,
       address,
-      receipt: receipt || `receipt_${Date.now()}`,
+      receipt,
+      razorpayOrderId: session.id, // ✅ Save Razorpay ID immediately
+      date: new Date(),
     });
 
     await newOrder.save();
-    console.log("Order saved successfully:", newOrder);
 
     // Clear user cart after order
     await Users.findByIdAndUpdate(userId, { cartData: {} });
 
-    // Create Razorpay order
-    const session = await razorpay.orders.create({
-      amount: amount * 100, // Convert to paise
-      currency: "INR",
-      receipt: newOrder._id.toString(),
-      payment_capture: 1,
-    });
-
-    // Send the order id to the front-end
     res.json({ success: true, orderId: session.id });
   } catch (error) {
     console.error("Error placing order:", error);
@@ -445,10 +464,20 @@ const placeOrder = async (req, res) => {
   }
 };
 
+// Email transporter configuration
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_PASSWORD,
+  },
+});
+
 // Payment verification endpoint
 app.post("/order/verify-payment", async (req, res) => {
-  const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
+  const { razorpay_payment_id, razorpay_order_id, razorpay_signature } =
     req.body;
+
   const body = razorpay_order_id + "|" + razorpay_payment_id;
 
   const expectedSignature = crypto
@@ -457,14 +486,35 @@ app.post("/order/verify-payment", async (req, res) => {
     .digest("hex");
 
   if (expectedSignature === razorpay_signature) {
-    const order = await Order.findOne({ receipt: razorpay_order_id });
+    const order = await Order.findOne({ razorpayOrderId: razorpay_order_id });
 
-    // Mark order as 'paid'
-    await Order.findOneAndUpdate(
-      { _id: order._id },
-      { status: "Paid", payment: true }
-    );
-    res.status(200).json({ success: true, message: "Payment verified" });
+    if (!order) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Order not found" });
+    }
+
+    await Order.findByIdAndUpdate(order._id, { status: "Paid", payment: true });
+    // Send receipt email (NEW CODE)
+    const mailOptions = {
+      from: process.env.GMAIL_USER,
+      to: order.userEmail,
+      subject: `Your Order #${order._id} Receipt`,
+      html: generateReceiptEmail(order),
+    };
+
+    // Wrap email sending in try-catch
+    try {
+      await transporter.sendMail(mailOptions);
+      console.log(`Receipt sent to ${order.userEmail}`);
+    } catch (emailError) {
+      console.error("Email failed:", emailError);
+      // Consider logging to error tracking service
+    }
+
+    res
+      .status(200)
+      .json({ success: true, message: "Payment verified and receipt sent" });
   } else {
     res
       .status(400)
@@ -474,6 +524,34 @@ app.post("/order/verify-payment", async (req, res) => {
 
 // Route for placing order
 app.post("/order/place", authMiddleware, placeOrder);
+
+// Email template function
+function generateReceiptEmail(order) {
+  return `
+    <html>
+      <body>
+        <h2>Thank you for your purchase, ${order.userName}!</h2>
+        <p>Order ID: ${order._id}</p>
+        <p>Amount Paid: ₹${order.amount}</p>
+        <p>Date: ${new Date(order.date).toLocaleDateString()}</p>
+        <h3>Items Purchased:</h3>
+        <ul>
+          ${order.items
+            .map(
+              (item) => `
+            <li>
+              ${item.name} - ${item.quantity}
+              (Total: ₹${item.price * item.quantity})
+            </li>
+          `
+            )
+            .join("")}
+        </ul>
+        <p><strong>Grand Total: ₹${order.amount}</strong></p>
+      </body>
+    </html>
+  `;
+}
 
 // Start the server
 app.listen(port, (error) => {

@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./PlaceOrder.css";
 import { StoreContext } from "../../context/StoreContext";
+const razorpayKey = import.meta.env.VITE_RAZORPAY_KEY_ID;
+console.log("Razorpay Key:", razorpayKey); // Should log your key, not undefined
 
 const PlaceOrder = () => {
   const [paymentSuccess, setPaymentSuccess] = useState(false);
@@ -73,20 +75,21 @@ const PlaceOrder = () => {
       if (responseData.success) {
         // Razorpay frontend integration
         const options = {
-          key: import.meta.env.VITE_RAZORPAY_KEY_ID,
-          amount: orderData.amount * 100, // In paise (multiply by 100)
+          key: razorpayKey,
+          amount: orderData.amount * 100, // In paise
           currency: "INR",
-          name: "The Artful Touch",
+          name: "FlatHeads",
           description: "Purchase Description",
-          order_id: responseData.orderId,
+          order_id: responseData.orderId, // ✅ Ensure correct order ID
           handler: async (response) => {
             const {
               razorpay_payment_id,
               razorpay_order_id,
               razorpay_signature,
             } = response;
+
             const verifyResponse = await fetch(
-              "http://localhost:4000/verify-payment",
+              "http://localhost:4000/order/verify-payment",
               {
                 method: "POST",
                 headers: {
@@ -100,8 +103,10 @@ const PlaceOrder = () => {
                 }),
               }
             );
+
             const verifyData = await verifyResponse.json();
             console.log("Verify Data: ", verifyData);
+
             if (verifyData.success) {
               setPaymentSuccess(true);
               setPaymentMessage(
@@ -126,6 +131,7 @@ const PlaceOrder = () => {
         const rzp = new window.Razorpay(options);
         rzp.open();
         console.log("Payment modal opened with options:", options);
+        console.log("All env variables:", import.meta.env);
       } else {
         console.error("Error during submission:", responseData);
         alert("Something went wrong, order not placed.");

@@ -9,7 +9,7 @@ const AddProduct = () => {
     image: null,
     old_price: "",
     new_price: "",
-    category: "Art Pieces", // Default category
+    category: "Sneakers", // Default category
   });
 
   const imageHandler = (e) => {
@@ -28,7 +28,7 @@ const AddProduct = () => {
     let product = productDetails;
     let formData = new FormData();
     formData.append("product", image);
-    await fetch("https://mern-e-commerce-backend-jkse.onrender.com/upload", {
+    await fetch("http://localhost:4000/upload", {
       method: "POST",
       headers: { Accept: "application/json" },
       body: formData,
@@ -38,15 +38,20 @@ const AddProduct = () => {
         responseData = data;
       });
     if (responseData.success) {
-      product.image = responseData.image_url;
-      console.log(product);
-      await fetch("https://mern-e-commerce-backend-jkse.onrender.com/addproduct", {
+      const updatedProduct = {
+        ...productDetails,
+        image: responseData.image_url, // ✅ Correctly adds image URL
+        category: productDetails.category || "Sneakers", // ✅ Ensures category is included
+      };
+
+      console.log("Final Product Data:", updatedProduct);
+      await fetch("http://localhost:4000/addproduct", {
         method: "POST",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(product),
+        body: JSON.stringify(updatedProduct),
       })
         .then((resp) => resp.json())
         .then((data) => {
@@ -97,10 +102,10 @@ const AddProduct = () => {
           name="category"
           className="add-product-selector"
         >
-          <option value="Art Pieces">Art Pieces</option>
-          <option value="Bookmarks">Bookmarks</option>
-          <option value="Keychains">Keychains</option>
-          <option value="Tote Bags">Tote Bags</option>
+          <option value="Sneakers">Sneakers</option>
+          <option value="Boots"> Boots</option>
+          <option value="Crocs">Crocs</option>
+          <option value="Soccer Shoes">Soccer Shoes</option>
         </select>
       </div>
       <div className="addproduct-itemfield">
