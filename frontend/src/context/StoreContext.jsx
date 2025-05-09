@@ -7,7 +7,7 @@ const StoreContextProvider = (props) => {
   const [all_products, setAllProducts] = useState([]);
   const [cartItems, setCartItems] = useState({});
 
-  const BASE_URL = "http://localhost:4000";
+  const BASE_URL = "https://flatheads-backend.onrender.com";
 
   useEffect(() => {
     fetch(`${BASE_URL}/allproducts`)

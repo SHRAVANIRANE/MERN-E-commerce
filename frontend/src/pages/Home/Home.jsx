@@ -13,7 +13,7 @@ const Home = () => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await fetch("http://localhost:4000/allreviews"); // Update the port if necessary
+        const response = await fetch("https://flatheads-backend.onrender.com/allreviews"); // Update the port if necessary
         const data = await response.json(); // Parse JSON response
         setReviews(data); // Set the fetched reviews to state
         setLoading(false); // Stop loading once data is fetched

@@ -44,7 +44,7 @@ const Commissioned = () => {
     });
 
     try {
-      const response = await fetch("http://localhost:4000/commission-request", {
+      const response = await fetch("https://flatheads-backend.onrender.com/commission-request", {
         method: "POST",
         body: formData,
       });

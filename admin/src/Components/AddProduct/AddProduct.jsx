@@ -28,7 +28,7 @@ const AddProduct = () => {
     let product = productDetails;
     let formData = new FormData();
     formData.append("product", image);
-    await fetch("http://localhost:4000/upload", {
+    await fetch("https://flatheads-backend.onrender.com/upload", {
       method: "POST",
       headers: { Accept: "application/json" },
       body: formData,
@@ -45,7 +45,7 @@ const AddProduct = () => {
       };
 
       console.log("Final Product Data:", updatedProduct);
-      await fetch("http://localhost:4000/addproduct", {
+      await fetch("https://flatheads-backend.onrender.com/addproduct", {
         method: "POST",
         headers: {
           Accept: "application/json",
