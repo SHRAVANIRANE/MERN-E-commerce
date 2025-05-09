@@ -5,7 +5,7 @@ const ListReview = () => {
 
   // Fetching data from the backend API
   const fetchInfo = async () => {
-    await fetch("http://localhost:4000/allreviews")
+    await fetch("https://flatheads-backend.onrender.com/allreviews")
       .then((res) => res.json())
       .then((data) => {
         setAllProducts(data);
@@ -20,7 +20,7 @@ const ListReview = () => {
   }, []);
 
   const remove_product = async (id) => {
-    await fetch("http://localhost:4000/removeproduct", {
+    await fetch("https://flatheads-backend.onrender.com/removeproduct", {
       method: "POST",
       headers: {
         Accept: "application/json",
