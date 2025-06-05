@@ -36,33 +36,38 @@ Flatheads is a modern and responsive full-stack e-commerce web application built
 
 ## 📸 Screenshots
 
-> Add images in a `screenshots/` folder in the repo
+> Add your screenshots in a folder named `screenshots/` in the root of your repo.
 
-```markdown
-![Home Page](screenshots/home.png)
-![Product Page](screenshots/product.png)
+![Home Page](screenshots/home.png)  
+![Product Page](screenshots/product.png)  
 ![Cart Page](screenshots/cart.png)
 
-🚀 Getting Started (Local Setup)
+---
+
+## 🚀 Getting Started (Local Setup)
+
 Follow these steps to run the project on your local machine:
 
-1. Clone the repository
-bash
-Copy
-Edit
+### 1. Clone the repository
+
 git clone https://github.com/your-username/Flatheads.git
 cd Flatheads
-2. Setup the backend
-bash
+
+shell
 Copy
 Edit
+
+### 2. Setup the backend
+
 cd backend
 npm install
-Create a .env file inside the backend/ folder and add:
 
-env
+go
 Copy
 Edit
+
+Create a `.env` file inside the `backend/` folder and add:
+
 MONGO_URL=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 RAZORPAY_KEY_ID=your_razorpay_key
@@ -70,78 +75,26 @@ RAZORPAY_SECRET_KEY=your_razorpay_secret
 CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_cloudinary_api_key
 CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+
+yaml
+Copy
+Edit
+
 Run the backend server:
 
-bash
+npm run dev
+
+csharp
 Copy
 Edit
-npm run dev
-3. Setup the frontend
+
+### 3. Setup the frontend
+
 Open a new terminal:
 
-bash
-Copy
-Edit
 cd frontend
 npm install
 npm run dev
-🛒 Folder Structure
-css
-Copy
-Edit
-Flatheads/
-├── frontend/
-│   ├── public/
-│   └── src/
-│       ├── components/
-│       ├── pages/
-│       ├── App.jsx
-│       └── main.jsx
-├── backend/
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   ├── uploads/images/
-│   └── index.js
-├── screenshots/
-├── README.md
-☁️ Deployment Steps (Render)
-🔧 Backend Deployment
-Go to Render
-
-Create a new Web Service
-
-Connect your GitHub repo
-
-Set root directory to backend/
-
-Add all environment variables from your .env file
-
-Build Command: npm install
-
-Start Command: npm run dev
-
-🎨 Frontend Deployment
-Create another Web Service or Static Site
-
-Set root directory to frontend/
-
-Build Command: npm install && npm run build
-
-Set dist/ folder as the publish directory
-
-🙋‍♀️ Author
-Shravani Santosh Rane
-Computer Science Graduate | Full Stack Developer
-
-🌐 Portfolio: Coming Soon
-
-💼 LinkedIn
-
-💻 GitHub
-
-📄 License
-This project is open source and available under the MIT License.
 
 yaml
 Copy
@@ -149,5 +102,63 @@ Edit
 
 ---
 
-✅ You can now paste this into your `README.md` file.  
-Let me know if you want badges, GIF demos, or a short video walkthrough section added!
+## 🛒 Folder Structure
+
+Flatheads/
+├── frontend/
+│ ├── public/
+│ └── src/
+│ ├── components/
+│ ├── pages/
+│ ├── App.jsx
+│ └── main.jsx
+├── backend/
+│ ├── controllers/
+│ ├── models/
+│ ├── routes/
+│ ├── uploads/images/
+│ └── index.js
+├── screenshots/
+├── README.md
+
+markdown
+Copy
+Edit
+
+---
+
+## ☁️ Deployment Steps (Render)
+
+### 🔧 Backend Deployment
+
+1. Go to [Render](https://render.com/)
+2. Create a new Web Service
+3. Connect your GitHub repo
+4. Set root directory to `backend/`
+5. Add environment variables from your `.env` file
+6. **Build Command:** `npm install`
+7. **Start Command:** `npm run dev`
+
+### 🎨 Frontend Deployment
+
+1. Create another Web Service or Static Site
+2. Set root directory to `frontend/`
+3. **Build Command:** `npm install && npm run build`
+4. Set `dist/` as the publish directory
+
+---
+
+## 🙋‍♀️ Author
+
+**Shravani Santosh Rane**  
+Computer Science Graduate | Full Stack Developer
+
+- 🌐 Portfolio: *Coming Soon*
+- 💼 [LinkedIn](https://linkedin.com/in/shravani-rane)
+- 💻 [GitHub](https://github.com/shravani-rane)
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
