@@ -34,16 +34,6 @@ Flatheads is a modern and responsive full-stack e-commerce web application built
 
 ---
 
-## 📸 Screenshots
-
-> Add your screenshots in a folder named `screenshots/` in the root of your repo.
-
-![Home Page](screenshots/home.png)  
-![Product Page](screenshots/product.png)  
-![Cart Page](screenshots/cart.png)
-
----
-
 ## 🚀 Getting Started (Local Setup)
 
 Follow these steps to run the project on your local machine:
