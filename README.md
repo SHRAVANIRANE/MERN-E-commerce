@@ -95,6 +95,7 @@ Edit
 
 ## 🛒 Folder Structure
 
+<pre>
 Flatheads/
 ├── frontend/
 │ ├── public/
@@ -111,6 +112,7 @@ Flatheads/
 │ └── index.js
 ├── screenshots/
 ├── README.md
+</pre>
 
 markdown
 Copy
