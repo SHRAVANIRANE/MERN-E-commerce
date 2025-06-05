@@ -2,7 +2,7 @@
 
 Flatheads is a modern and responsive full-stack e-commerce web application built using the **MERN stack** (MongoDB, Express, React, Node.js). It allows users to browse and buy custom-designed shoes, while the admin can manage products and orders via a dedicated admin panel.
 
-🔗 **Live Demo:** [https://flatheads-ecom.onrender.com](https://flatheads-ecom.onrender.com)
+🔗 **Live Demo:** https://flatheads-frontend.onrender.com
 
 ---
 
