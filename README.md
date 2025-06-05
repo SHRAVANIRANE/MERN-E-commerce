@@ -26,11 +26,11 @@ Flatheads is a modern and responsive full-stack e-commerce web application built
 
 ## 🧱 Tech Stack
 
-| Frontend        | Backend         | Database     | Other Tools           |
-|-----------------|------------------|--------------|------------------------|
+| Frontend        | Backend           | Database     | Other Tools           |
+|-----------------|-------------------|--------------|------------------------|
 | React.js        | Node.js + Express | MongoDB      | Cloudinary (Images)   |
-| Tailwind CSS    | JWT Auth         | Mongoose     | Razorpay (Payments)   |
-| React Router    | REST API         |              | Render (Deployment)   |
+| Tailwind CSS    | JWT Auth          | Mongoose     | Razorpay (Payments)   |
+| React Router    | REST API          |              | Render (Deployment)   |
 
 ---
 
@@ -38,19 +38,21 @@ Flatheads is a modern and responsive full-stack e-commerce web application built
 
 > Add images in a `screenshots/` folder in the repo
 
+```markdown
+![Home Page](screenshots/home.png)
+![Product Page](screenshots/product.png)
+![Cart Page](screenshots/cart.png)
 
----
-
-## 🚀 Getting Started (Local Setup)
-
+🚀 Getting Started (Local Setup)
 Follow these steps to run the project on your local machine:
 
-### 1. Clone the repository
-
-```bash
+1. Clone the repository
+bash
+Copy
+Edit
 git clone https://github.com/your-username/Flatheads.git
 cd Flatheads
-### 2. Setup the backend
+2. Setup the backend
 bash
 Copy
 Edit
@@ -68,14 +70,14 @@ RAZORPAY_SECRET_KEY=your_razorpay_secret
 CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_cloudinary_api_key
 CLOUDINARY_API_SECRET=your_cloudinary_api_secret
-Then run the backend:
+Run the backend server:
 
 bash
 Copy
 Edit
 npm run dev
-### 3. Setup the frontend
-In a separate terminal:
+3. Setup the frontend
+Open a new terminal:
 
 bash
 Copy
@@ -83,7 +85,7 @@ Edit
 cd frontend
 npm install
 npm run dev
-## 🛒 Folder Structure
+🛒 Folder Structure
 css
 Copy
 Edit
@@ -103,43 +105,42 @@ Flatheads/
 │   └── index.js
 ├── screenshots/
 ├── README.md
-
-## ☁️ Deployment Steps (Render)
-### Backend Deployment
+☁️ Deployment Steps (Render)
+🔧 Backend Deployment
 Go to Render
 
-Create a new web service
+Create a new Web Service
 
 Connect your GitHub repo
 
 Set root directory to backend/
 
-Add environment variables from .env
+Add all environment variables from your .env file
 
 Build Command: npm install
 
 Start Command: npm run dev
 
-### Frontend Deployment
-Create another web service or static site
+🎨 Frontend Deployment
+Create another Web Service or Static Site
 
 Set root directory to frontend/
 
 Build Command: npm install && npm run build
 
-Publish the dist folder
+Set dist/ folder as the publish directory
 
-## 🙋‍♀️ Author
+🙋‍♀️ Author
 Shravani Santosh Rane
 Computer Science Graduate | Full Stack Developer
 
 🌐 Portfolio: Coming Soon
 
-💼 LinkedIn: linkedin.com/in/shravani-rane
+💼 LinkedIn
 
-💻 GitHub: github.com/shravani-rane
+💻 GitHub
 
-## 📄 License
+📄 License
 This project is open source and available under the MIT License.
 
 yaml
@@ -148,5 +149,5 @@ Edit
 
 ---
 
-Let me know if you'd like me to generate badge icons or customize sections based on screenshots or your Render project 
-
+✅ You can now paste this into your `README.md` file.  
+Let me know if you want badges, GIF demos, or a short video walkthrough section added!
