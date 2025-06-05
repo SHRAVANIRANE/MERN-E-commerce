@@ -14,7 +14,8 @@ Flatheads is a modern and responsive full-stack e-commerce web application built
 - 🔐 Secure login/signup with JWT-based auth
 - 💳 Razorpay integrated checkout system
 - ⭐ Product reviews and star ratings
-- 📦 Track orders and view order history
+- 🎨 Customization
+- 📩 Receive confirmation email on your registered gmail
 
 ### 🛠 Admin Features
 - 📦 Add, update, delete products
@@ -29,7 +30,7 @@ Flatheads is a modern and responsive full-stack e-commerce web application built
 | Frontend        | Backend           | Database     | Other Tools           |
 |-----------------|-------------------|--------------|------------------------|
 | React.js        | Node.js + Express | MongoDB      | Cloudinary (Images)   |
-| Tailwind CSS    | JWT Auth          | Mongoose     | Razorpay (Payments)   |
+|  CSS            | JWT Auth          | Mongoose     | Razorpay (Payments)   |
 | React Router    | REST API          |              | Render (Deployment)   |
 
 ---
@@ -144,9 +145,8 @@ Edit
 Computer Science Graduate | Full Stack Developer
 
 - 🌐 Portfolio: *Coming Soon*
-- 💼 [LinkedIn](https://linkedin.com/in/shravani-rane)
-- 💻 [GitHub](https://github.com/shravani-rane)
-
+- 💼 [LinkedIn] https://www.linkedin.com/in/shravaniirane2122/
+- 💻 [GitHub] https://github.com/SHRAVANIRANE
 ---
 
 ## 📄 License
