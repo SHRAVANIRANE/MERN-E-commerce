@@ -41,7 +41,7 @@ Follow these steps to run the project on your local machine:
 
 ### 1. Clone the repository
 
-git clone https://github.com/your-username/Flatheads.git
+git clone https://github.com/SHRAVANIRANE/MERN-E-commerce.git
 cd Flatheads
 
 shell
