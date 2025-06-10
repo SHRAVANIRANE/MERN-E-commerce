@@ -35,6 +35,46 @@ Flatheads is a modern and responsive full-stack e-commerce web application built
 
 ---
 
+## 📸 Screenshots
+
+### 🏠 Home Page
+![Home](screenshots/HomePage.png)
+
+### 🖼️ About Us
+![About Us](screenshots/AboutUs.png)
+
+### 🛒 Cart Page
+![Cart](screenshots/cartpage.png)
+
+### 🔐 Sign Up
+![Sign Up](screenshots/SIGNUP.png)
+
+### 🔑 Login
+![Login](screenshots/login.png)
+
+### 🆕 New Arrivals
+![New Arrivals](screenshots/NewArrivals.png)
+
+### 🎨 Commissioned Artwork
+![Commissioned Artwork](screenshots/CommissionedArtwork.png)
+
+### 🧾 Admin Panel
+![Admin Panel](screenshots/ADMINPANEL.png)
+
+### 🎯 Product Listing
+![Product List](screenshots/PRODUCTLIST.png)
+
+### 🖌️ Custom Requests
+![Custom](screenshots/custom.png)
+
+### 🧩 Collections
+![Collections](screenshots/collections.png)
+
+### 💬 Commission Request
+![Commission Request](screenshots/CommReq.png)
+
+---
+
 ## 🚀 Getting Started (Local Setup)
 
 Follow these steps to run the project on your local machine:
@@ -42,20 +82,11 @@ Follow these steps to run the project on your local machine:
 ### 1. Clone the repository
 
 git clone https://github.com/SHRAVANIRANE/MERN-E-commerce.git
-cd Flatheads
-
-shell
-Copy
-Edit
 
 ### 2. Setup the backend
 
 cd backend
 npm install
-
-go
-Copy
-Edit
 
 Create a `.env` file inside the `backend/` folder and add:
 
@@ -63,21 +94,10 @@ MONGO_URL=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 RAZORPAY_KEY_ID=your_razorpay_key
 RAZORPAY_SECRET_KEY=your_razorpay_secret
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_cloudinary_api_key
-CLOUDINARY_API_SECRET=your_cloudinary_api_secret
-
-yaml
-Copy
-Edit
 
 Run the backend server:
+node index.js
 
-npm run dev
-
-csharp
-Copy
-Edit
 
 ### 3. Setup the frontend
 
@@ -86,10 +106,6 @@ Open a new terminal:
 cd frontend
 npm install
 npm run dev
-
-yaml
-Copy
-Edit
 
 ---
 
@@ -113,10 +129,6 @@ Flatheads/
 ├── screenshots/
 ├── README.md
 </pre>
-
-markdown
-Copy
-Edit
 
 ---
 
