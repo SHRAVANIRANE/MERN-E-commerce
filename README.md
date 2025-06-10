@@ -37,41 +37,22 @@ Flatheads is a modern and responsive full-stack e-commerce web application built
 
 ## 📸 Screenshots
 
-### 🏠 Home Page
-![Home](screenshots/HomePage.png)
+| Home Page | About Us | Cart Page |
+|-----------|----------|-----------|
+| <img src="screenshots/HomePage.png" width="250"/> | <img src="screenshots/AboutUs.png" width="250"/> | <img src="screenshots/cartpage.png" width="250"/> |
 
-### 🖼️ About Us
-![About Us](screenshots/AboutUs.png)
+| New Arrivals | Product List | Sign Up |
+|--------------|--------------|---------|
+| <img src="screenshots/NewArrivals.png" width="250"/> | <img src="screenshots/PRODUCTLIST.png" width="250"/> | <img src="screenshots/SIGNUP.png" width="250"/> |
 
-### 🛒 Cart Page
-![Cart](screenshots/cartpage.png)
+| Login | Admin Panel | Collections |
+|-------|-------------|-------------|
+| <img src="screenshots/login.png" width="250"/> | <img src="screenshots/ADMINPANEL.png" width="250"/> | <img src="screenshots/collections.png" width="250"/> |
 
-### 🔐 Sign Up
-![Sign Up](screenshots/SIGNUP.png)
+| Custom Requests | Commission Request | Commissioned Artwork |
+|-----------------|--------------------|-----------------------|
+| <img src="screenshots/custom.png" width="250"/> | <img src="screenshots/CommReq.png" width="250"/> | <img src="screenshots/CommissionedArtwork.png" width="250"/> |
 
-### 🔑 Login
-![Login](screenshots/login.png)
-
-### 🆕 New Arrivals
-![New Arrivals](screenshots/NewArrivals.png)
-
-### 🎨 Commissioned Artwork
-![Commissioned Artwork](screenshots/CommissionedArtwork.png)
-
-### 🧾 Admin Panel
-![Admin Panel](screenshots/ADMINPANEL.png)
-
-### 🎯 Product Listing
-![Product List](screenshots/PRODUCTLIST.png)
-
-### 🖌️ Custom Requests
-![Custom](screenshots/custom.png)
-
-### 🧩 Collections
-![Collections](screenshots/collections.png)
-
-### 💬 Commission Request
-![Commission Request](screenshots/CommReq.png)
 
 ---
 
