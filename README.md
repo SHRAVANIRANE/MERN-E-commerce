@@ -65,9 +65,10 @@ Follow these steps to run the project on your local machine:
 git clone https://github.com/SHRAVANIRANE/MERN-E-commerce.git
 
 ### 2. Setup the backend
-
+<pre>
 cd backend
 npm install
+</pre>
 
 Create a `.env` file inside the `backend/` folder and add:
 
@@ -83,11 +84,11 @@ node index.js
 ### 3. Setup the frontend
 
 Open a new terminal:
-
+<pre>
 cd frontend
 npm install
 npm run dev
-
+</pre>
 ---
 
 ## 🛒 Folder Structure
