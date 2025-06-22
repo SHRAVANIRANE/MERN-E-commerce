@@ -145,6 +145,12 @@ Computer Science Graduate | Full Stack Developer
 - 💻 [GitHub] https://github.com/SHRAVANIRANE
 ---
 
+## ✨ Support
+
+If you liked the project, don't forget to ⭐ star the repo!
+
+---
+
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
