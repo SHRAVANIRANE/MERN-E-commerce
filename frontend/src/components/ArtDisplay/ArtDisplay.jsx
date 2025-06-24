@@ -15,7 +15,7 @@ const ArtDisplay = ({ category }) => {
   }
 
   if (all_products.length === 0) {
-    return <div>No products available.</div>;
+    return <div>Loading...Please Wait</div>;
   }
 
   // Filter products based on category
