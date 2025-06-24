@@ -28,7 +28,7 @@ const Navbar = ({ setShowLogin }) => {
           <Link to="/">
             <img
               src="https://i.pinimg.com/originals/70/71/3d/70713de479955be2e7cbcc520ed84e66.jpg"
-              alt="The Artful Touch Logo"
+              alt="FlatHeads"
             />
           </Link>
         </div>
