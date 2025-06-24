@@ -8,12 +8,8 @@ const Footer = () => {
         <div className="footer-content-left">
           <img src={assets.TheArtfulTouch} alt="" />
           <p>
-            Explore a unique collection of hand-crafted artworks, stylish tote
-            bags, creative keychains, and personalized gifts. At The Artful
-            Touch, we blend artistry and utility, offering products that
-            celebrate creativity and individuality. Whether you're looking for a
-            stunning painting, a trendy accessory, or a custom portrait, we've
-            got something special for everyone.
+            At FlatHeads, we believe that the perfect pair of shoes is more than
+            just footwear—it's a statement.
           </p>
 
           <div className="footer-social-icons">
