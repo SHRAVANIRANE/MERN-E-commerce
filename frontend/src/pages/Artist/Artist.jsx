@@ -7,7 +7,7 @@ const Artist = () => {
     <div className="fourth-section" id="artist">
       <div className="fourth">
         <div className="image">
-          <img src={assets.shravani} alt="" />
+          <img src="https://res.cloudinary.com/dvq8qukci/image/upload/v1750779781/pexels-valeriiamiller-3547625_2_rvtc1e.jpg" alt="" />
         </div>
         <div className="text">
           <h1 className="bottom-h1">
