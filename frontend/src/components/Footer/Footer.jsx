@@ -6,7 +6,7 @@ const Footer = () => {
     <div className="footer" id="footer">
       <div className="footer-content">
         <div className="footer-content-left">
-          <img src={assets.TheArtfulTouch} alt="" />
+          <img src="https://i.pinimg.com/originals/70/71/3d/70713de479955be2e7cbcc520ed84e66.jpg" alt="" />
           <p>
             At FlatHeads, we believe that the perfect pair of shoes is more than
             just footwear—it's a statement.
